@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "username": "isalm",
+    "email": "assdf@gmail.com",
+    "password": "$2b$10$XP6If3vGmBEKZd0geNjOkO8EPkD5DwvAQeC7enHQ2H6MfOI1YiH0C"
+  },
+  {
+    "id": 2,
+    "username": "islam",
+    "email": "isa@gmail.com",
+    "password": "$2b$10$ZQDciBmi/yht8WOqlk6O6u6x8Kh1tom5U2nwNPksjSFu2sQiSYoJq"
+  },
+  {
+    "id": 3,
+    "username": "Maklaren",
+    "email": "maklaren@gmail.com",
+    "password": "$2b$10$ivApzaK50MjNr.tl/yYVV.jr7bqhzLoQot0hYpSOpPFFjPfEnGTEm"
+  }
+]

@@ -1,0 +1,217 @@
+/* --- Общие стили и Сброс --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Светло-серый фон */
+    margin: 0;
+    padding: 0;
+}
+
+.admin-wrapper {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 10px 50px;
+}
+
+/* --- Хедер (Навигационная панель) --- */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.header__user-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* --- Заголовок страницы --- */
+.admin-page-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-weight: normal;
+}
+
+/* --- Макет основного содержимого --- */
+.admin-content-layout {
+    display: flex;
+    gap: 30px;
+}
+
+/* --- Общий стиль для панелей (карточек) --- */
+.panel-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+}
+
+.panel-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* --- Левая панель: Форма добавления --- */
+.admin-left-panel {
+    flex: 0 0 350px; /* Фиксированная ширина для левой панели */
+}
+
+.form-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    font-weight: bold; /* Соответствует скриншоту */
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px; /* Уменьшаем отступ, так как у нас есть label */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Важно для padding */
+    font-size: 1rem;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.add-button {
+    width: 100%;
+    background-color: #000; /* Синий цвет */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+.asde{
+  text-decoration: none;
+  color: #000;
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+.add-button:hover {
+    background-color: #121212;
+}
+
+/* --- Правая панель: Список новостей --- */
+.admin-right-panel {
+    flex: 1; /* Занимает оставшееся пространство */
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Отступ между карточками */
+}
+
+/* --- Стили для карточек новостей --- */
+.news-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 15px;
+    transition: box-shadow 0.2s;
+}
+
+.news-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-card__content {
+    flex-grow: 1;
+    margin-right: 15px;
+}
+
+.news-card__title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.news-card__text {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.news-card__actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Стили кнопок (иконок) Редактировать/Удалить */
+.action-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.edit-icon {
+    color: #000; /* Синий для редактирования */
+}
+
+.delete-icon {
+    color: #f44336; /* Красный для удаления */
+}
+
+.edit-icon:hover {
+    background-color: #e8eaf6;
+}
+
+.delete-icon:hover {
+    background-color: #ffebee;
+}
+
+/* Стилизация для иконок-заполнителей */
+.icon-placeholder {
+    font-size: 1rem;
+    /* Убираем стилизацию, если используются настоящие иконки, 
+       оставляем только для эмодзи */
+}
