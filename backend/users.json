@@ -16,5 +16,37 @@
     "username": "Maklaren",
     "email": "maklaren@gmail.com",
     "password": "$2b$10$ivApzaK50MjNr.tl/yYVV.jr7bqhzLoQot0hYpSOpPFFjPfEnGTEm"
+  },
+  {
+    "username": "das",
+    "password": "12345"
+  },
+  {
+    "email": "isaww@gmail.com",
+    "password": "12345"
+  },
+  {
+    "email": "wdw@gmail.com",
+    "password": "12345"
+  },
+  {
+    "email": "wd@dd",
+    "username": "wdwd",
+    "password": "wd"
+  },
+  {
+    "email": "wdwd@wdwd",
+    "username": "wdwdw",
+    "password": "wdwd"
+  },
+  {
+    "email": "wdwdwd@wdwd",
+    "username": "admin",
+    "password": "wdwd"
+  },
+  {
+    "email": "wdwddw@wdwd",
+    "username": "wdwdwdwdwd",
+    "password": "wdwd"
   }
 ]

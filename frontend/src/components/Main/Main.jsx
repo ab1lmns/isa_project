@@ -1,8 +1,7 @@
 import React from "react";
 import "./Main.css";
 import Navbar from "../Navbar/Navbar";
-
-import {cardsData} from '../../cardsdata'
+import cardsData from "../../../cardsdata.json";
 import { Link } from "react-router-dom";
 
 const Main = () => {

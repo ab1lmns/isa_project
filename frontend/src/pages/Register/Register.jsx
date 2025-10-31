@@ -1,51 +1,39 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./Register.css";
 
-const Register = () => {
-  const navigate = useNavigate();
-  const [name, setName] = useState("");
+export default function Register() {
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
       const res = await fetch("http://localhost:5000/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: name, email, password }),
+        body: JSON.stringify({ email, username, password }),
       });
 
       const data = await res.json();
-      setMessage(data.message);
-
-      if (res.ok) {
-        // Можно сразу авторизовать пользователя после регистрации
-        const loginRes = await fetch("http://localhost:5000/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
-        });
-
-        const loginData = await loginRes.json();
-        if (loginRes.ok) {
-          localStorage.setItem("token", loginData.token);
-          localStorage.setItem("username", loginData.username);
-          navigate("/dashboard");
-        }
+      if (data.success) {
+        setMessage("Регистрация прошла успешно!");
+        navigate("/login");
+      } else {
+        setMessage(data.message || "Ошибка регистрации");
       }
     } catch (err) {
-      setMessage("Ошибка сервера");
-      console.error(err);
+      setMessage("Ошибка соединения с сервером");
     }
   };
 
   return (
     <div className="register-container">
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleRegister}>
         <h2>Регистрация</h2>
         <span className="gray">Создайте новый аккаунт</span>
 
@@ -53,8 +41,8 @@ const Register = () => {
         <input
           type="text"
           placeholder="Введите имя"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
 
@@ -86,6 +74,4 @@ const Register = () => {
       </form>
     </div>
   );
-};
-
-export default Register;
+}

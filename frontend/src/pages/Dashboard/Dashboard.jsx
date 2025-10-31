@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect }from "react";
 import "./Dashboard.css";
-import { cardsData } from "../../cardsdata";
+import cardsData from "../../../cardsdata.json";
 import { Link, useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const username = localStorage.getItem("username") || "Пользователь";
+  const username = localStorage.getItem("username");
+
+  useEffect(() => {
+    if (!username) {
+      navigate("/login");
+    }
+  }, [username, navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("username");
@@ -18,13 +24,18 @@ const Dashboard = () => {
       <nav className="navbar">
         <div className="navbar__logo">Новостной Портал</div>
         <div className="navbar__links">
-            <h1>Добро пожаловать, {username}!</h1>
-            <button onClick={handleLogout}>Выйти</button>
+            <span className="navbar__welcome">Добро пожаловать, {username}!</span>
+              <button onClick={handleLogout} className="logout-btn">Выйти</button>
         </div>
       </nav>
-      <Link to={`/admin`} className="admin__button">
-              Админ панель
-      </Link>
+      {username === "admin" && (
+        <div className="admin__panel">
+          <Link to="/admin" className="admin__button">
+            Админ панель
+          </Link>
+        </div>
+      )}
+
       <h3 className="zas">Последние новости</h3>
       
       <div className="cards">
